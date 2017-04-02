@@ -1,0 +1,17 @@
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/dj_napsty/Documents/MUD/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/dj_napsty/Documents/MUD/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/UnityEngine.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/UnityEditor.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Mono.Cecil.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Unity.DataContract.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Mono.Cecil.Mdb.dll
