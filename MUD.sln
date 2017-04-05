@@ -5,6 +5,8 @@ Project("{B442C9FC-6938-30ED-8351-6517512AED73}") = "MUD", "Assembly-CSharp-firs
 EndProject
 Project("{B442C9FC-6938-30ED-8351-6517512AED73}") = "MUD", "Assembly-CSharp.csproj", "{7544C944-31E4-F8F2-4B95-F024E3EFDE43}"
 EndProject
+Project("{B442C9FC-6938-30ED-8351-6517512AED73}") = "MUD", "Assembly-CSharp-Editor.csproj", "{D65CA6FA-B396-2694-7CC4-2D84AC577C3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7544C944-31E4-F8F2-4B95-F024E3EFDE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7544C944-31E4-F8F2-4B95-F024E3EFDE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7544C944-31E4-F8F2-4B95-F024E3EFDE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65CA6FA-B396-2694-7CC4-2D84AC577C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65CA6FA-B396-2694-7CC4-2D84AC577C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65CA6FA-B396-2694-7CC4-2D84AC577C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65CA6FA-B396-2694-7CC4-2D84AC577C3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
