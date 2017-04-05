@@ -6,6 +6,7 @@ public class CharMover : MonoBehaviour {
 	public float forwardVel = 12;
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
+	public character Player;
 
 
 	Quaternion targetRotation;
@@ -18,18 +19,20 @@ public class CharMover : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		targetRotation = transform.rotation;
 		rbody = GetComponent<Rigidbody>();
 		forwardInput = 0; 
 		turnInput = 0;
-			
-
 	}
-	void getInput() {
+
+
+
+	void getInput() 
+	{
 		forwardInput = Input.GetAxis ("Vertical");
 		turnInput = Input.GetAxis ("Horizontal");
-
 	}
 
 	
@@ -44,16 +47,20 @@ public class CharMover : MonoBehaviour {
 
 
 	}
-	void FixedUpdate () {
+	void FixedUpdate () 
+	{
 		run();
+	}
 
-		}
-	void run (){
 
+	void run ()
+	{
 		rbody.velocity = transform.forward * forwardInput * forwardVel;
 	}
-	void turn () {
 
+
+	void turn () 
+	{
 		targetRotation *= Quaternion.AngleAxis(rotationSpeed * turnInput * Time.deltaTime, Vector3.up);
 		transform.rotation = targetRotation;
 		//print (targetRotation);
@@ -62,11 +69,34 @@ public class CharMover : MonoBehaviour {
 		//print(turnInput);
 	}
 
+
+
+
+	void OnCollisionEnter(Collision collision) {
+
+		if (collision.gameObject.tag == "BlueFood") 
+		{
+			Player.blueFood++;
+			Destroy(collision.gameObject);
+		
+		}
+
+		if(collision.gameObject.tag == "RedFood") 
+		{
+			Player.redFood++;
+			Destroy(collision.gameObject);
+
+		}
+
+		if(collision.gameObject.tag == "GreenFood") 
+		{
+			Player.greenFood++;
+			Destroy(collision.gameObject);
+
+		}
+
+	}
 }
-
-
-
-
 
 
 

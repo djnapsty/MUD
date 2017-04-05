@@ -15,3 +15,8 @@
 /Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/ProBuilderCore-Unity5.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/pb_Stl.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/KDTree.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/ProBuilderMeshOps-Unity5.dll
+/Users/dj_napsty/Documents/MUD/Temp/bin/Debug/Triangle.dll
