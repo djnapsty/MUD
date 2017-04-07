@@ -7,14 +7,15 @@ public class CharMover : MonoBehaviour {
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
 	public character Player;
-
+	const float grow = .01f;
 
 	Quaternion targetRotation;
 	Rigidbody rbody;
 
 	float forwardInput, turnInput;
 
-	public Quaternion TargetRotation {
+	public Quaternion TargetRotation 
+	{
 		get { return targetRotation; }
 	}
 
@@ -66,7 +67,7 @@ public class CharMover : MonoBehaviour {
 		//print (targetRotation);
 		//print (rotationSpeed);
 		//print (Time.deltaTime);
-		//print(turnInput);
+		//print (turnInput);
 	}
 
 
@@ -76,7 +77,8 @@ public class CharMover : MonoBehaviour {
 
 		if (collision.gameObject.tag == "BlueFood") 
 		{
-			Player.blueFood++;
+			Player.blueFood++; //add one to blueFood
+			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
 			Destroy(collision.gameObject);
 		
 		}
@@ -84,6 +86,8 @@ public class CharMover : MonoBehaviour {
 		if(collision.gameObject.tag == "RedFood") 
 		{
 			Player.redFood++;
+			//float playerScaleX = Player.transform.localScale.x;
+			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
 			Destroy(collision.gameObject);
 
 		}
@@ -91,6 +95,7 @@ public class CharMover : MonoBehaviour {
 		if(collision.gameObject.tag == "GreenFood") 
 		{
 			Player.greenFood++;
+			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
 			Destroy(collision.gameObject);
 
 		}
