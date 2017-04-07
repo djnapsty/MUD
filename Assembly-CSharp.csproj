@@ -52,7 +52,6 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
      <Compile Include="Assets\Scripts\AttackUI.cs" />
-     <Compile Include="Assets\Scripts\CController.cs" />
      <Compile Include="Assets\Scripts\Cameracontroller.cs" />
      <Compile Include="Assets\Scripts\CharMover.cs" />
      <Compile Include="Assets\Scripts\HealthUI.cs" />
@@ -61,7 +60,6 @@
      <Compile Include="Assets\Scripts\camerafollow.cs" />
      <Compile Include="Assets\Scripts\character.cs" />
      <Compile Include="Assets\Scripts\greenfoodUI.cs" />
-     <Compile Include="Assets\Scripts\mover.cs" />
      <Compile Include="Assets\Scripts\redfoodUI.cs" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
      <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />

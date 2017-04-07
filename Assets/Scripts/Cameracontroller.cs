@@ -7,42 +7,45 @@ public class Cameracontroller : MonoBehaviour {
 	public Transform target;
 	public float looksmooth = .09f;
 	public Vector3 offsetFromTarget = new Vector3 (0, 6, -8);
-	public float xTilt = 10f;
+	public float xTilt = 10f; //not currently used
 
 	Vector3 destination = Vector3.zero;
 	CharMover mover;
 	float rotationSpeed = 0;
 
 
-
-
-
-	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		setCameraTarget (target);
-
 	}
 
-	void setCameraTarget (Transform t) {
+
+
+	void setCameraTarget (Transform t) 
+	{
 		target = t;
-
 		mover = target.GetComponent<CharMover>();
-
-
-				
 	}
 
 	
-	// Update is called once per frame
-	void LateUpdate () {
+
+	void LateUpdate () 
+	{
 		moveToTarget ();
 		LookAtTarget ();
 	}
-	void moveToTarget () {
+
+
+
+	void moveToTarget () 
+	{
 		destination = mover.TargetRotation * offsetFromTarget;
 		destination += target.position;
 		transform.position = destination;
 	}
+
+
+
 
 	void LookAtTarget()
 	{
