@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class CharMover : MonoBehaviour {
-
+	const float grow = .01f;
 	public float forwardVel = 12;
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
 	public character Player;
-	const float grow = .01f;
+	Animation anim;
+
+
 
 	Quaternion targetRotation;
 	Rigidbody rbody;
@@ -22,6 +24,7 @@ public class CharMover : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		anim = GetComponent<Animation>();
 		targetRotation = transform.rotation;
 		rbody = GetComponent<Rigidbody>();
 		forwardInput = 0; 
@@ -51,12 +54,28 @@ public class CharMover : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		run();
+
 	}
 
 
 	void run ()
 	{
 		rbody.velocity = transform.forward * forwardInput * forwardVel;
+
+
+	
+		//run animation
+		if (forwardInput > inputDelay) 
+		{
+			anim.Play ("move");
+		}
+		if (forwardInput < inputDelay) 
+		{
+			anim.Play ("idle");
+		}
+	
+	
+	
 	}
 
 
@@ -101,6 +120,7 @@ public class CharMover : MonoBehaviour {
 		}
 
 	}
+
 }
 
 

@@ -9,6 +9,7 @@ public class character : MonoBehaviour {
 	public int greenFood;
 	public int attack;
 	public int defense;
+	public int levelTarget;
 
 
 	void awake ()
