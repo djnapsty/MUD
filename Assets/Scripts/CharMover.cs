@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class CharMover : MonoBehaviour {
-	const float grow = .01f;
-	public float forwardVel = 12;
+	const float grow = .005f;
+	public float forwardVel = 10;
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
 	public character Player;
