@@ -10,6 +10,8 @@ public class character : MonoBehaviour {
 	public int attack;
 	public int defense;
 	public int levelTarget;
+	public int greenLevelTarget;
+	public int blueLevelTarget;
 
 
 	void awake ()

@@ -20,6 +20,6 @@ public class bluefoodUI : MonoBehaviour {
 	{
 		bluefoodNUM = player.blueFood;
 
-		bluefood.text = "" + bluefoodNUM;
+		bluefood.text = "" + bluefoodNUM + " / " + player.blueLevelTarget;
 	}
 }

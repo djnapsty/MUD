@@ -21,6 +21,6 @@ public class redfoodUI : MonoBehaviour {
 	void Update ()
 	{
 		redfoodNUM = player.redFood;
-		redfood.text = "" + redfoodNUM;
+		redfood.text = "" + redfoodNUM + " / " + player.levelTarget;
 	}
 }

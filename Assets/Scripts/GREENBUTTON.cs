@@ -1,30 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
-public class REDBUTTON : MonoBehaviour {
+public class GREENBUTTON : MonoBehaviour {
 	public character player;
-	public int target;
+	public int greenTarget;
 
 	[SerializeField] private Button MyButton = null; // assign in the editor
-
 	void Start()
 	{ 
 		MyButton.onClick.AddListener(() => { levelUp();});
 	}
 	void levelUp()
 	{
-		target = player.levelTarget;
-		if (player.redFood >= target) {
-			
+		greenTarget = player.greenLevelTarget;
+		if (player.greenFood >= greenTarget) {
+
 			player.charLevel++;
-			player.redFood -= target;
+			player.greenFood -= greenTarget;
 			player.attack++;
-			player.defense++;
-			player.levelTarget *= target / 5;
-			
+			player.attack++;
+			player.greenLevelTarget *= greenTarget / 5;
+
 		}
-	
+
 	}
-		
 }

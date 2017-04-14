@@ -21,6 +21,6 @@ public int greenfoodNUM;
 	void Update ()
 	{
 		greenfoodNUM = player.greenFood;
-		greenfood.text = "" + greenfoodNUM;
+		greenfood.text = "" + greenfoodNUM + " / " + player.greenLevelTarget;
 	}
 }
