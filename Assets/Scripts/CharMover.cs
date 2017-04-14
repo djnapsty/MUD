@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharMover : MonoBehaviour {
-	const float grow = .005f;
+	const float grow = .002f;
 	public float forwardVel = 10;
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
@@ -25,8 +25,9 @@ public class CharMover : MonoBehaviour {
 	void Start () 
 	{
 		anim = GetComponent<Animation>();
-		targetRotation = transform.rotation;
 		rbody = GetComponent<Rigidbody>();
+
+		targetRotation = transform.rotation;
 		forwardInput = 0; 
 		turnInput = 0;
 	}
@@ -69,12 +70,15 @@ public class CharMover : MonoBehaviour {
 		{
 			anim.Play ("move");
 		}
-		if (forwardInput < inputDelay) 
+		if (forwardInput < inputDelay && forwardInput != 0) 
 		{
 			anim.Play ("idle");
 		}
-	
-	
+		if (forwardInput == 0.0f) 
+		{
+			anim.Play ("idle2");
+		}
+		
 	
 	}
 
@@ -94,7 +98,7 @@ public class CharMover : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 
-		if (collision.gameObject.tag == "BlueFood") 
+		if(collision.gameObject.tag == "BlueFood") 
 		{
 			Player.blueFood++; //add one to blueFood
 			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
