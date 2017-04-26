@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\BLUEBUTTON.cs" />
      <Compile Include="Assets\Scripts\Cameracontroller.cs" />
      <Compile Include="Assets\Scripts\CharMover.cs" />
+     <Compile Include="Assets\Scripts\DEBUG_UI_BUTTON.cs" />
      <Compile Include="Assets\Scripts\GREENBUTTON.cs" />
      <Compile Include="Assets\Scripts\HealthUI.cs" />
      <Compile Include="Assets\Scripts\MUDGameController.cs" />

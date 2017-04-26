@@ -23,7 +23,7 @@ var moveAnimSpeed:float=1;
 var rotSpeed:float=1;
 var rotTreshold:float=80;
 
-var killTime:float=3000;
+var killTime:float=10000;
 
 var move2:boolean=false;
 private var useMove2:boolean=false;
@@ -101,7 +101,11 @@ behavChangeTime=0.5;
 	}	
 
 
-
+if (killTime<killTimeCounter&&state!=3)
+{
+Destroy(gameObject, 4);
+state=3;
+}
  
 
 
