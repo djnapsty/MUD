@@ -97,10 +97,12 @@
      <Compile Include="Assets\Scripts\Cameracontroller.cs" />
      <Compile Include="Assets\Scripts\CharMover.cs" />
      <Compile Include="Assets\Scripts\DEBUG_UI_BUTTON.cs" />
+     <Compile Include="Assets\Scripts\Evolution.cs" />
      <Compile Include="Assets\Scripts\GREENBUTTON.cs" />
      <Compile Include="Assets\Scripts\HealthUI.cs" />
      <Compile Include="Assets\Scripts\MUDGameController.cs" />
      <Compile Include="Assets\Scripts\REDBUTTON.cs" />
+     <Compile Include="Assets\Scripts\SmoothMouseLook.cs" />
      <Compile Include="Assets\Scripts\bluefoodUI.cs" />
      <Compile Include="Assets\Scripts\camerafollow.cs" />
      <Compile Include="Assets\Scripts\character.cs" />

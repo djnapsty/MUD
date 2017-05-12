@@ -14,7 +14,10 @@ public class DEBUG_UI_BUTTON : MonoBehaviour {
 	{
 		//display player x,y,z
 		getPlayerPosition ();
-		DEBUG_UI_BUTTON_TEXT.text = "PLAYER POSITION:\n" +  player_Position.x.ToString("F3") + ", \n" + player_Position.y.ToString("F3")+ ", \n" + player_Position.z.ToString("F3");
+		DEBUG_UI_BUTTON_TEXT.text = "PLAYER POSITION:\n" +  
+			player_Position.x.ToString("F3") + ", \n" + 
+			player_Position.y.ToString("F3")+ ", \n" + 
+			player_Position.z.ToString("F3");
 
 
 

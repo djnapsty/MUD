@@ -12,7 +12,8 @@ public class character : MonoBehaviour {
 	public int levelTarget;
 	public int greenLevelTarget;
 	public int blueLevelTarget;
-
+	public GameObject playerAvatar;
+	public Quaternion playerRotation;
 
 	void awake ()
 	{
@@ -30,7 +31,8 @@ public class character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+
+		this.gameObject.transform.position = playerAvatar.gameObject.transform.position;
 	
 	}
 }

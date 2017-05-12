@@ -7,7 +7,6 @@ public class CharMover : MonoBehaviour {
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
 	public character Player;
-	public float grow1 = -.002f;
 	Animation anim;
 
 
@@ -45,7 +44,9 @@ public class CharMover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		getInput ();
-		turn (); 
+		turn ();
+		ScalePlayer ();
+		setTargetRotation ();
 		//print (forwardVel);
 		//print (forwardInput);
 		//print (turnInput);
@@ -103,7 +104,6 @@ public class CharMover : MonoBehaviour {
 		{
 			Player.blueFood++; //add one to blueFood
 			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
-			Player.gameObject.transform.position += new Vector3 (grow1, 0, grow1 / 2);
 			Destroy(collision.gameObject);
 		
 		}
@@ -111,9 +111,7 @@ public class CharMover : MonoBehaviour {
 		if(collision.gameObject.tag == "RedFood") 
 		{
 			Player.redFood++;
-			//float playerScaleX = Player.transform.localScale.x;
 			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
-			Player.gameObject.transform.position += new Vector3 (grow1, 0, grow1 /2);
 			Destroy(collision.gameObject);
 
 		}
@@ -122,17 +120,27 @@ public class CharMover : MonoBehaviour {
 		{
 			Player.greenFood++;
 			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
-			Player.gameObject.transform.position += new Vector3(grow1, 0, grow1 /2);
 			Destroy(collision.gameObject);
 
 		}
 
 	}
+	void ScalePlayer()
+	{
+		this.gameObject.transform.localScale = Player.gameObject.transform.localScale;
+	}
+
+	void setTargetRotation()
+	{
+		Player.playerRotation = targetRotation;
+	}
+
+
 
 }
 
 
-
+	
 
 
 
