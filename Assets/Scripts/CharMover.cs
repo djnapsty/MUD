@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor.Audio;
 
 public class CharMover : MonoBehaviour {
 	const float grow = .002f;
@@ -30,6 +31,8 @@ public class CharMover : MonoBehaviour {
 		targetRotation = transform.rotation;
 		forwardInput = 0; 
 		turnInput = 0;
+
+
 	}
 
 
@@ -121,6 +124,17 @@ public class CharMover : MonoBehaviour {
 			Player.greenFood++;
 			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
 			Destroy(collision.gameObject);
+
+		}
+
+		if (collision.gameObject.tag == "roach") 
+		{
+			Destroy (collision.gameObject);
+			AudioSource audio = GetComponent<AudioSource>();
+			audio.Play();
+			Player.redFood+=5;
+			Player.greenFood+=5;
+			Player.blueFood+=5;
 
 		}
 
