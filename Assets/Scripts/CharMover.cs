@@ -139,6 +139,7 @@ public class CharMover : MonoBehaviour {
 			Player.redFood += 5;
 			Player.greenFood += 5;
 			Player.blueFood += 5;
+			Player.defense += 1;
 
 		}
 
@@ -152,6 +153,7 @@ public class CharMover : MonoBehaviour {
 			Player.redFood += 5;
 			Player.greenFood += 5;
 			Player.blueFood += 5;
+			Player.defense += 1;
 
 		}
 
@@ -187,6 +189,20 @@ public class CharMover : MonoBehaviour {
 				Player.blueFood += 20;
 			}
 
+		}
+
+
+		if (collision.gameObject.tag == "spider") {
+			Player.defense -= 1;
+
+			if (Player.attack > 3) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 10;
+				Player.greenFood += 10;
+				Player.blueFood += 10;
+			}
 		}
 	
 	
