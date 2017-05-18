@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor.Audio;
+//using UnityEditor.Audio;
+using UnityEngine.SceneManagement;
 
 public class CharMover : MonoBehaviour {
 	const float grow = .002f;
@@ -55,6 +56,10 @@ public class CharMover : MonoBehaviour {
 		//print (turnInput);
 		//print (rbody.velocity);
 
+		if (Player.defense <= 0) {
+			SceneManager.LoadScene (2);
+		}
+
 
 	}
 	void FixedUpdate () 
@@ -81,7 +86,7 @@ public class CharMover : MonoBehaviour {
 		}
 		if (forwardInput == 0.0f) 
 		{
-			anim.Play ("idle2");
+			anim.Play ("idle");
 		}
 		
 	
@@ -103,42 +108,91 @@ public class CharMover : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 
-		if(collision.gameObject.tag == "BlueFood") 
-		{
+		if (collision.gameObject.tag == "BlueFood") {
 			Player.blueFood++; //add one to blueFood
-			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
-			Destroy(collision.gameObject);
+			Player.gameObject.transform.localScale += new Vector3 (grow, grow, grow);
+			Destroy (collision.gameObject);
 		
 		}
 
-		if(collision.gameObject.tag == "RedFood") 
-		{
+		if (collision.gameObject.tag == "RedFood") {
 			Player.redFood++;
-			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
-			Destroy(collision.gameObject);
-
-		}
-
-		if(collision.gameObject.tag == "GreenFood") 
-		{
-			Player.greenFood++;
-			Player.gameObject.transform.localScale += new Vector3(grow, grow, grow);
-			Destroy(collision.gameObject);
-
-		}
-
-		if (collision.gameObject.tag == "roach") 
-		{
+			Player.gameObject.transform.localScale += new Vector3 (grow, grow, grow);
 			Destroy (collision.gameObject);
-			AudioSource audio = GetComponent<AudioSource>();
-			audio.Play();
-			Player.redFood+=5;
-			Player.greenFood+=5;
-			Player.blueFood+=5;
 
 		}
 
-	}
+		if (collision.gameObject.tag == "GreenFood") {
+			Player.greenFood++;
+			Player.gameObject.transform.localScale += new Vector3 (grow, grow, grow);
+			Destroy (collision.gameObject);
+
+		}
+
+
+
+
+		if (collision.gameObject.tag == "roach") {
+			Destroy (collision.gameObject);
+			AudioSource audio = GetComponent<AudioSource> ();
+			audio.Play ();
+			Player.redFood += 5;
+			Player.greenFood += 5;
+			Player.blueFood += 5;
+
+		}
+
+
+
+
+		if (collision.gameObject.tag == "snail") {
+			Destroy (collision.gameObject);
+			AudioSource audio = GetComponent<AudioSource> ();
+			audio.Play ();
+			Player.redFood += 5;
+			Player.greenFood += 5;
+			Player.blueFood += 5;
+
+		}
+
+
+
+
+
+		if (collision.gameObject.tag == "snake") {
+			Player.defense -= 1;
+
+			if (Player.attack > 3) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 10;
+				Player.greenFood += 10;
+				Player.blueFood += 10;
+			}
+		}
+				
+
+
+
+		if (collision.gameObject.tag == "lobster") {
+			Player.defense -= 2;
+
+			if (Player.attack > 5) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 20;
+				Player.greenFood += 20;
+				Player.blueFood += 20;
+			}
+
+		}
+	
+	
+	
+	
+	}			
 	void ScalePlayer()
 	{
 		this.gameObject.transform.localScale = Player.gameObject.transform.localScale;
