@@ -23,7 +23,7 @@ public class BLUEBUTTON : MonoBehaviour {
 			player.blueFood -= blueTarget;
 			player.defense++;
 			player.defense++;
-			player.blueLevelTarget *= blueTarget / 5;
+			player.blueLevelTarget *= 2;
 
 		}
 

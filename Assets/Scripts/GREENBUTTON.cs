@@ -19,7 +19,7 @@ public class GREENBUTTON : MonoBehaviour {
 			player.greenFood -= greenTarget;
 			player.attack++;
 			player.attack++;
-			player.greenLevelTarget *= greenTarget / 5;
+			player.greenLevelTarget *= 2;
 
 		}
 

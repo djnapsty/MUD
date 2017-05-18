@@ -21,7 +21,7 @@ public class REDBUTTON : MonoBehaviour {
 			player.redFood -= target;
 			player.attack++;
 			player.defense++;
-			player.levelTarget *= target / 5;
+			player.levelTarget *= 2;
 			
 		}
 	
