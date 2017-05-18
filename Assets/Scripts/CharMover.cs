@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class CharMover : MonoBehaviour {
-	const float grow = .002f;
+	const float grow = .003f;
 	public float forwardVel = 10;
 	public float rotationSpeed = 100;
 	public float inputDelay = .01f;
@@ -56,6 +56,7 @@ public class CharMover : MonoBehaviour {
 		//print (turnInput);
 		//print (rbody.velocity);
 
+		//player dies when defense = 0
 		if (Player.defense <= 0) {
 			SceneManager.LoadScene (2);
 		}
@@ -65,7 +66,6 @@ public class CharMover : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		run();
-
 	}
 
 
@@ -180,7 +180,7 @@ public class CharMover : MonoBehaviour {
 		if (collision.gameObject.tag == "lobster") {
 			Player.defense -= 2;
 
-			if (Player.attack > 5) {
+			if (Player.attack > 8) {
 				Destroy (collision.gameObject);
 				AudioSource audio = GetComponent<AudioSource> ();
 				audio.Play ();
@@ -193,19 +193,84 @@ public class CharMover : MonoBehaviour {
 
 
 		if (collision.gameObject.tag == "spider") {
-			Player.defense -= 1;
+			
 
-			if (Player.attack > 3) {
+			if (Player.attack > 7) {
 				Destroy (collision.gameObject);
 				AudioSource audio = GetComponent<AudioSource> ();
 				audio.Play ();
-				Player.redFood += 10;
-				Player.greenFood += 10;
-				Player.blueFood += 10;
+				Player.redFood += 20;
+				Player.greenFood += 20;
+				Player.blueFood += 20;
 			}
+
 		}
 	
+
+		if (collision.gameObject.tag == "rat") {
+			Player.defense -= 2;
+
+			if (Player.attack > 6) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 120;
+				Player.greenFood += 120;
+				Player.blueFood += 120;
+				Player.defense += 1;
+			}
+
+		}
+
+
+		if (collision.gameObject.tag == "squirel") {
+			Player.defense -= 2;
+
+			if (Player.attack > 9) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 220;
+				Player.greenFood += 220;
+				Player.blueFood += 220;
+			}
+
+		}
 	
+
+
+
+
+		if (collision.gameObject.tag == "frog") {
+			Player.defense -= 1;
+
+			if (Player.attack > 6) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 50;
+				Player.greenFood += 50;
+				Player.blueFood += 50;
+				Player.defense += 2;
+			}
+
+		}
+
+		if (collision.gameObject.tag == "turtle") {
+			Player.defense -= 3;
+
+			if (Player.attack > 20) {
+				Destroy (collision.gameObject);
+				AudioSource audio = GetComponent<AudioSource> ();
+				audio.Play ();
+				Player.redFood += 520;
+				Player.greenFood += 520;
+				Player.blueFood += 520;
+			}
+
+		}
+
+
 	
 	
 	}			
